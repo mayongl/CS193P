@@ -12,10 +12,10 @@ import UIKit
 @IBDesignable
 class FaceView: UIView {
     @IBInspectable
-    var scale: CGFloat = 0.9
-    var eyesOpen: Bool = true
+    var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
+    var eyesOpen: Bool = true  { didSet { setNeedsDisplay() } }
     @IBInspectable
-    var mouthCurvature: Double = 1.0    //1.p is full smile and -1.0 is full frown
+    var mouthCurvature: Double = 1.0  { didSet { setNeedsDisplay() } }   //1.p is full smile and -1.0 is full frown
     
     private var skullRadius : CGFloat {
         return min(bounds.size.width, bounds.size.height)/2 * scale
@@ -30,6 +30,21 @@ class FaceView: UIView {
         case left
         case right
     }
+    
+    func changeScale(byReactingTo pinchRecognizer: UIPinchGestureRecognizer) {
+        switch pinchRecognizer.state {
+        case .changed, .ended:
+            scale *= pinchRecognizer.scale
+            pinchRecognizer.scale = 1
+        default:
+            break
+        }
+        
+    }
+    
+    
+    
+    
     
     private struct Ratios {
         static let skullRadiusToEyeOffset: CGFloat = 3
