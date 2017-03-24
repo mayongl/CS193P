@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FaceViewController: UIViewController {
     
     @IBOutlet weak var faceView: FaceView! {
         didSet {
@@ -59,15 +59,14 @@ class ViewController: UIViewController {
     private func updateUI() {
         switch expression.eyes {
         case .open:
-            faceView.eyesOpen = true
+            faceView?.eyesOpen = true
         case .closed:
-            faceView.eyesOpen = false
+            faceView?.eyesOpen = false
         case .squinting:
-            faceView.eyesOpen = false
+            faceView?.eyesOpen = false
         }
-        faceView.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
+        faceView?.mouthCurvature = mouthCurvatures[expression.mouth] ?? 0.0
         
     }
-    
 }
 

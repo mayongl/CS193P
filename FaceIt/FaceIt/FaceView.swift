@@ -11,8 +11,8 @@ import UIKit
 
 @IBDesignable
 class FaceView: UIView {
-    @IBInspectable
     var scale: CGFloat = 0.9 { didSet { setNeedsDisplay() } }
+    @IBInspectable    
     var eyesOpen: Bool = true  { didSet { setNeedsDisplay() } }
     @IBInspectable
     var mouthCurvature: Double = 1.0  { didSet { setNeedsDisplay() } }   //1.p is full smile and -1.0 is full frown

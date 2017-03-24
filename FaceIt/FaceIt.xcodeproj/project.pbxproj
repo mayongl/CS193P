@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D04CBDD1E83FC4C0017FD72 /* EmotionsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D04CBDC1E83FC4C0017FD72 /* EmotionsNavViewController.swift */; };
+		0D1C392D1E83A27100267B8B /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C392C1E83A27100267B8B /* EmotionsViewController.swift */; };
 		751476941E7A176600ABFA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751476931E7A176600ABFA29 /* AppDelegate.swift */; };
-		751476961E7A176600ABFA29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751476951E7A176600ABFA29 /* ViewController.swift */; };
+		751476961E7A176600ABFA29 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751476951E7A176600ABFA29 /* FaceViewController.swift */; };
 		751476991E7A176600ABFA29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751476971E7A176600ABFA29 /* Main.storyboard */; };
 		7514769B1E7A176600ABFA29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7514769A1E7A176600ABFA29 /* Assets.xcassets */; };
 		7514769E1E7A176600ABFA29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7514769C1E7A176600ABFA29 /* LaunchScreen.storyboard */; };
@@ -36,9 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D04CBDC1E83FC4C0017FD72 /* EmotionsNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsNavViewController.swift; sourceTree = "<group>"; };
+		0D1C392C1E83A27100267B8B /* EmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 		751476901E7A176600ABFA29 /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751476931E7A176600ABFA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		751476951E7A176600ABFA29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		751476951E7A176600ABFA29 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		751476981E7A176600ABFA29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7514769A1E7A176600ABFA29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7514769D1E7A176600ABFA29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,13 +106,15 @@
 			isa = PBXGroup;
 			children = (
 				751476931E7A176600ABFA29 /* AppDelegate.swift */,
-				751476951E7A176600ABFA29 /* ViewController.swift */,
+				751476951E7A176600ABFA29 /* FaceViewController.swift */,
 				751476971E7A176600ABFA29 /* Main.storyboard */,
 				7514769A1E7A176600ABFA29 /* Assets.xcassets */,
 				7514769C1E7A176600ABFA29 /* LaunchScreen.storyboard */,
 				7514769F1E7A176600ABFA29 /* Info.plist */,
 				751476C11E7A17AD00ABFA29 /* FaceView.swift */,
 				755A718B1E7F9BBF00022FE7 /* FacialExpression.swift */,
+				0D1C392C1E83A27100267B8B /* EmotionsViewController.swift */,
+				0D04CBDC1E83FC4C0017FD72 /* EmotionsNavViewController.swift */,
 			);
 			path = FaceIt;
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751476961E7A176600ABFA29 /* ViewController.swift in Sources */,
+				0D04CBDD1E83FC4C0017FD72 /* EmotionsNavViewController.swift in Sources */,
+				751476961E7A176600ABFA29 /* FaceViewController.swift in Sources */,
 				755A718C1E7F9BBF00022FE7 /* FacialExpression.swift in Sources */,
+				0D1C392D1E83A27100267B8B /* EmotionsViewController.swift in Sources */,
 				751476941E7A176600ABFA29 /* AppDelegate.swift in Sources */,
 				751476C21E7A17AD00ABFA29 /* FaceView.swift in Sources */,
 			);
