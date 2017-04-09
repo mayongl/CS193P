@@ -15,6 +15,7 @@
 		0D72ED531E98998D005A5DB3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D72ED521E98998D005A5DB3 /* Twitter.framework */; };
 		0D72ED551E98A2CD005A5DB3 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D72ED541E98A2CD005A5DB3 /* Twitter.framework */; };
 		0D72ED561E98A2CD005A5DB3 /* Twitter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0D72ED541E98A2CD005A5DB3 /* Twitter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0D72ED5F1E9A3C94005A5DB3 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72ED5E1E9A3C94005A5DB3 /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +42,7 @@
 		0D72ED301E988CA0005A5DB3 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		0D72ED521E98998D005A5DB3 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../Twitter/build/Debug-iphoneos/Twitter.framework"; sourceTree = "<group>"; };
 		0D72ED541E98A2CD005A5DB3 /* Twitter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Twitter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D72ED5E1E9A3C94005A5DB3 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				0D72ED211E988BB5005A5DB3 /* Main.storyboard */,
 				0D72ED291E988BB5005A5DB3 /* Info.plist */,
 				0D72ED301E988CA0005A5DB3 /* TweetTableViewController.swift */,
+				0D72ED5E1E9A3C94005A5DB3 /* TweetTableViewCell.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				0D72ED1E1E988BB5005A5DB3 /* AppDelegate.swift in Sources */,
 				0D72ED311E988CA0005A5DB3 /* TweetTableViewController.swift in Sources */,
+				0D72ED5F1E9A3C94005A5DB3 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

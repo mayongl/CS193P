@@ -136,7 +136,8 @@ public class Request: NSObject
     func performTwitterRequest(_ method: SLRequestMethod, handler: @escaping (PropertyList?) -> Void) {
         let jsonExtension = (self.requestType.range(of: Constants.JSONExtension) == nil) ? Constants.JSONExtension : ""
         let url = URL(string: "\(Constants.twitterURLPrefix)\(self.requestType)\(jsonExtension)")
-        if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: method, url: url, parameters: parameters) {
+        //if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: method, url: url, parameters:
+        if let request = SLRequest(forServiceType: SLServiceTypeSinaWeibo, requestMethod: method, url: url, parameters: parameters) {
             performTwitterSLRequest(request, handler: handler)
         }
     }
@@ -169,7 +170,9 @@ public class Request: NSObject
             }
         } else {
             let accountStore = ACAccountStore()
-            let twitterAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
+            //let twitterAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
+            let twitterAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierSinaWeibo)
+            
             accountStore.requestAccessToAccounts(with: twitterAccountType, options: nil) { (granted, _) in
                 if granted {
                     if let account = accountStore.accounts(with: twitterAccountType)?.last as? ACAccount {
@@ -239,8 +242,10 @@ public class Request: NSObject
     // constants
     
     private struct Constants {
-        static let JSONExtension = ".json"
-        static let twitterURLPrefix = "https://api.twitter.com/1.1/"
+        //static let JSONExtension = ".json"
+        static let JSONExtension = ""
+        //static let twitterURLPrefix = "https://api.twitter.com/1.1/"
+        static let twitterURLPrefix = "https://s.weibo.com/weibo/"
     }
     
     // keys in Twitter responses/queries
@@ -253,7 +258,8 @@ public class Request: NSObject
         static let resultTypeRecent = "recent"
         static let resultTypePopular = "popular"
         static let geocode = "geocode"
-        static let searchForTweets = "search/tweets"
+        //static let searchForTweets = "search/tweets"
+        static let searchForTweets = ""
         static let maxID = "max_id"
         static let sinceID = "since_id"
         struct SearchMetadata {

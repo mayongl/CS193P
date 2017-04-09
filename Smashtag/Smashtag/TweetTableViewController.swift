@@ -9,7 +9,7 @@
 import UIKit
 import Twitter
 
-class TweetTableViewController: UITableViewController {
+class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     private var tweets = [Array<Tweet>]() {
         didSet {
@@ -19,6 +19,8 @@ class TweetTableViewController: UITableViewController {
     
     var searchText: String? {
         didSet {
+            searchTextField?.text = searchText
+            searchTextField?.resignFirstResponder()
             tweets.removeAll()
             tableView.reloadData()
             searchForTweets()
@@ -52,19 +54,33 @@ class TweetTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        searchText = "#standford"
+        //searchText = "#standford"
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == searchTextField {
+            searchText = searchTextField.text
+        }
+        return true
     }
     
     // MARK: - Table view data source
@@ -79,14 +95,23 @@ class TweetTableViewController: UITableViewController {
         return tweets[section].count
     }
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
+        
+        // Configure the cell...
+        let tweet = tweets[indexPath.section][indexPath.row]
+        if let tweetCell = cell as? TweetTableViewCell {
+            tweetCell.tweet = tweet
+        }
+//        cell.textLabel?.text = tweet.text
+//        cell.detailTextLabel?.text = tweet.user.name
+        
+        return cell
+    }
+    
+    
      
-     // Configure the cell...
-     
-     return cell
-     }
-
+    
     
     /*
      // Override to support conditional editing of the table view.
