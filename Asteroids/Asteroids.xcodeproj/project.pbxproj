@@ -11,6 +11,7 @@
 		0D8603831EA352CE008D77AD /* AsteroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D86037F1EA352CE008D77AD /* AsteroidView.swift */; };
 		0D8603841EA352CE008D77AD /* CoreGraphicsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8603801EA352CE008D77AD /* CoreGraphicsExtensions.swift */; };
 		0D8603851EA352CE008D77AD /* SpaceshipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8603811EA352CE008D77AD /* SpaceshipView.swift */; };
+		0D8603871EA388A4008D77AD /* AsteroidBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8603861EA388A4008D77AD /* AsteroidBehavior.swift */; };
 		0DCD6D811EA33ECF00EAD679 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD6D801EA33ECF00EAD679 /* AppDelegate.swift */; };
 		0DCD6D831EA33ECF00EAD679 /* AsteroidsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCD6D821EA33ECF00EAD679 /* AsteroidsViewController.swift */; };
 		0DCD6D861EA33ECF00EAD679 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DCD6D841EA33ECF00EAD679 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		0D86037F1EA352CE008D77AD /* AsteroidView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidView.swift; sourceTree = "<group>"; };
 		0D8603801EA352CE008D77AD /* CoreGraphicsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreGraphicsExtensions.swift; sourceTree = "<group>"; };
 		0D8603811EA352CE008D77AD /* SpaceshipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceshipView.swift; sourceTree = "<group>"; };
+		0D8603861EA388A4008D77AD /* AsteroidBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsteroidBehavior.swift; sourceTree = "<group>"; };
 		0DCD6D7D1EA33ECF00EAD679 /* Asteroids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Asteroids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DCD6D801EA33ECF00EAD679 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DCD6D821EA33ECF00EAD679 /* AsteroidsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidsViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		0DCD6D921EA33EF600EAD679 /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				0D8603861EA388A4008D77AD /* AsteroidBehavior.swift */,
 				0D8603811EA352CE008D77AD /* SpaceshipView.swift */,
 				0D8603801EA352CE008D77AD /* CoreGraphicsExtensions.swift */,
 				0D86037F1EA352CE008D77AD /* AsteroidView.swift */,
@@ -162,6 +165,7 @@
 				0D8603821EA352CE008D77AD /* AsteroidFieldView.swift in Sources */,
 				0D8603841EA352CE008D77AD /* CoreGraphicsExtensions.swift in Sources */,
 				0D8603831EA352CE008D77AD /* AsteroidView.swift in Sources */,
+				0D8603871EA388A4008D77AD /* AsteroidBehavior.swift in Sources */,
 				0D8603851EA352CE008D77AD /* SpaceshipView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
