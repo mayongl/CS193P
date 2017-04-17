@@ -10,6 +10,7 @@
 		0D04CBDD1E83FC4C0017FD72 /* EmotionsNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D04CBDC1E83FC4C0017FD72 /* EmotionsNavViewController.swift */; };
 		0D1C392D1E83A27100267B8B /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1C392C1E83A27100267B8B /* EmotionsViewController.swift */; };
 		0D7BB9E41E85473D00992551 /* VCLLoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BB9E31E85473D00992551 /* VCLLoggingViewController.swift */; };
+		0DD8437A1EA4B8B400F33EF9 /* ExpressionEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD843791EA4B8B400F33EF9 /* ExpressionEditorViewController.swift */; };
 		751476941E7A176600ABFA29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751476931E7A176600ABFA29 /* AppDelegate.swift */; };
 		751476961E7A176600ABFA29 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751476951E7A176600ABFA29 /* FaceViewController.swift */; };
 		751476991E7A176600ABFA29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751476971E7A176600ABFA29 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		0D04CBDC1E83FC4C0017FD72 /* EmotionsNavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsNavViewController.swift; sourceTree = "<group>"; };
 		0D1C392C1E83A27100267B8B /* EmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 		0D7BB9E31E85473D00992551 /* VCLLoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLLoggingViewController.swift; sourceTree = "<group>"; };
+		0DD843791EA4B8B400F33EF9 /* ExpressionEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpressionEditorViewController.swift; sourceTree = "<group>"; };
 		751476901E7A176600ABFA29 /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751476931E7A176600ABFA29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751476951E7A176600ABFA29 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				0D7BB9E31E85473D00992551 /* VCLLoggingViewController.swift */,
 				75BEF55A1EA1C5B900C06649 /* BlinkingFaceViewController.swift */,
 				75BEF55C1EA1D55B00C06649 /* EyeView.swift */,
+				0DD843791EA4B8B400F33EF9 /* ExpressionEditorViewController.swift */,
 			);
 			path = FaceIt;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				0D7BB9E41E85473D00992551 /* VCLLoggingViewController.swift in Sources */,
 				0D04CBDD1E83FC4C0017FD72 /* EmotionsNavViewController.swift in Sources */,
 				751476961E7A176600ABFA29 /* FaceViewController.swift in Sources */,
+				0DD8437A1EA4B8B400F33EF9 /* ExpressionEditorViewController.swift in Sources */,
 				755A718C1E7F9BBF00022FE7 /* FacialExpression.swift in Sources */,
 				75BEF55D1EA1D55B00C06649 /* EyeView.swift in Sources */,
 				0D1C392D1E83A27100267B8B /* EmotionsViewController.swift in Sources */,
