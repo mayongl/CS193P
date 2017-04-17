@@ -15,7 +15,7 @@ class AsteroidBehavior: UIDynamicBehavior, UICollisionBehaviorDelegate
     private lazy var collider: UICollisionBehavior = {
         let behavior = UICollisionBehavior()
         behavior.collisionMode = .boundaries
-//        behavior.translatesReferenceBoundsIntoBoundary = true
+        behavior.translatesReferenceBoundsIntoBoundary = true
         behavior.collisionDelegate = self
         return behavior
     }()
