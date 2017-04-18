@@ -7,14 +7,23 @@
 //
 import UIKit
 
-class EmotionsViewController: UITableViewController {
+class EmotionsViewController: UITableViewController, UIPopoverPresentationControllerDelegate {
     // MARK: Model
     private var emotionalFaces: [(name: String, expression: FacialExpression)] = [
         ("sad", FacialExpression(eyes: .closed, mouth: .frown)),
         ("happy", FacialExpression(eyes: .open, mouth: .smile)),
         ("worried", FacialExpression(eyes: .open, mouth: .smirk))]
     
-    // MARK: UITablewDataSource
+    @IBAction func addEmotionalFace(from segue: UIStoryboardSegue) {
+        if let editor = segue.source as? ExpressionEditorViewController {
+            if !editor.name.isEmpty {
+                emotionalFaces.append((editor.name, editor.expression))
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    // MARK: UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emotionalFaces.count
@@ -40,6 +49,20 @@ class EmotionsViewController: UITableViewController {
             let indexPath = tableView.indexPath(for: cell) {
             faceViewController.expression = emotionalFaces[indexPath.row].expression
             faceViewController.navigationItem.title = emotionalFaces[indexPath.row].name
+        } else if destinationViewController is ExpressionEditorViewController {
+            if let popoverPresentationController = segue.destination.popoverPresentationController {
+                popoverPresentationController.delegate = self
+            }
+        }
+    }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        if traitCollection.verticalSizeClass == .compact {
+            return .none
+        } else if traitCollection.horizontalSizeClass == .compact {
+            return .overFullScreen
+        } else {
+            return .none
         }
     }
 }

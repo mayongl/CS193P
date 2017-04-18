@@ -122,7 +122,9 @@
                     <navigationItem key="navigationItem" title="Emotions" id="Wnd-z4-EgT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wIU-If-yKw">
                             <connections>
-                                <segue destination="6PL-lK-Y9F" kind="presentation" id="83P-FT-UEH"/>
+                                <segue destination="6PL-lK-Y9F" kind="popoverPresentation" popoverAnchorBarButtonItem="wIU-If-yKw" id="83P-FT-UEH">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -172,16 +174,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ia-kN-HXp" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="123"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </view>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="krM-4G-Vf8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
+                                                    <connections>
+                                                        <segue destination="7b8-cz-aNA" kind="embed" identifier="Embed Face" id="0Nb-FD-fj3"/>
+                                                    </connections>
+                                                </containerView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="9ia-kN-HXp" firstAttribute="top" secondItem="NeX-gU-FKv" secondAttribute="top" id="69a-4m-zd3"/>
-                                                <constraint firstAttribute="trailing" secondItem="9ia-kN-HXp" secondAttribute="trailing" id="HRz-Vb-Y9B"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="9ia-kN-HXp" secondAttribute="bottom" id="WLD-tb-1kt"/>
-                                                <constraint firstItem="9ia-kN-HXp" firstAttribute="leading" secondItem="NeX-gU-FKv" secondAttribute="leading" id="wtq-z5-tv6"/>
+                                                <constraint firstItem="krM-4G-Vf8" firstAttribute="leading" secondItem="NeX-gU-FKv" secondAttribute="leading" id="0eY-L0-PdS"/>
+                                                <constraint firstItem="krM-4G-Vf8" firstAttribute="centerY" secondItem="NeX-gU-FKv" secondAttribute="centerY" id="Vlj-IZ-Bbq"/>
+                                                <constraint firstAttribute="trailing" secondItem="krM-4G-Vf8" secondAttribute="trailing" id="awy-pm-1jp"/>
+                                                <constraint firstItem="krM-4G-Vf8" firstAttribute="top" secondItem="NeX-gU-FKv" secondAttribute="top" id="dIC-7N-cPc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -255,6 +259,11 @@
                                 <action selector="cancel:" destination="gK5-5w-AUO" id="mwo-mW-RyM"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gxs-2l-Pnh">
+                            <connections>
+                                <segue destination="EPc-4Q-6FO" kind="unwind" identifier="Add Emotion" unwindAction="addEmotionalFaceFrom:" id="DBe-oS-r4K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="eyeControl" destination="cs4-C8-d0n" id="5al-o8-E8r"/>
@@ -263,8 +272,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vvO-Xs-t2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EPc-4Q-6FO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3369.5652173913045" y="-439.4021739130435"/>
+            <point key="canvasLocation" x="3209" y="-440"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5kY-y7-cZ9">
@@ -300,7 +310,41 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGB-Mw-7IT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2308.695652173913" y="-439.4021739130435"/>
+            <point key="canvasLocation" x="2181" y="-439"/>
+        </scene>
+        <!--Blinking Face View Controller-->
+        <scene sceneID="z8C-iO-bg5">
+            <objects>
+                <viewController id="7b8-cz-aNA" customClass="BlinkingFaceViewController" customModule="FaceIt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jbh-1p-HQV"/>
+                        <viewControllerLayoutGuide type="bottom" id="lXk-Cf-hO2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kGT-dx-7kd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="cyZ-Ta-G9G" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="131"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cyZ-Ta-G9G" secondAttribute="trailing" id="Wsa-aS-6Wf"/>
+                            <constraint firstItem="cyZ-Ta-G9G" firstAttribute="leading" secondItem="kGT-dx-7kd" secondAttribute="leading" id="XiJ-fR-rxr"/>
+                            <constraint firstAttribute="bottom" secondItem="cyZ-Ta-G9G" secondAttribute="bottom" id="d35-Oc-CK6"/>
+                            <constraint firstItem="cyZ-Ta-G9G" firstAttribute="top" secondItem="kGT-dx-7kd" secondAttribute="top" id="szg-uj-ctO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="faceView" destination="cyZ-Ta-G9G" id="Bpc-eq-Cuo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Rv-Zb-9eh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4021.739130434783" y="-440.62500000000006"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

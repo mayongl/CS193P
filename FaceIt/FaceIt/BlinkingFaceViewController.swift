@@ -55,6 +55,10 @@ class BlinkingFaceViewController: FaceViewController {
     
     private var canBlink = false
     private var inABlink = false
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        canBlink = true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
