@@ -35,7 +35,7 @@ public struct Tweet : CustomStringConvertible
             let user = User(data: data?.dictionary(forKeyPath: TwitterKey.user)),
             let text = data?.string(forKeyPath: TwitterKey.text),
             let created = twitterDateFormatter.date(from: data?.string(forKeyPath: TwitterKey.created) ?? ""),
-            let identifier = data?.string(forKeyPath: TwitterKey.identifier)
+            let identifier = data?.int(forKeyPath: TwitterKey.identifier)?.description
             else {
                 return nil
         }
@@ -75,7 +75,7 @@ public struct Tweet : CustomStringConvertible
         static let user = "user"
         static let text = "text"
         static let created = "created_at"
-        static let identifier = "id_str"
+        static let identifier = "id"
         static let media = "entities.media"
         struct Entities {
             static let hashtags = "entities.hashtags"

@@ -13,6 +13,7 @@
 		0D72ED281E988BB5005A5DB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D72ED261E988BB5005A5DB3 /* LaunchScreen.storyboard */; };
 		0D72ED311E988CA0005A5DB3 /* TweetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72ED301E988CA0005A5DB3 /* TweetTableViewController.swift */; };
 		0D72ED5F1E9A3C94005A5DB3 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72ED5E1E9A3C94005A5DB3 /* TweetTableViewCell.swift */; };
+		0DD535B21EA8750B004409CD /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DD535B11EA8750B004409CD /* Twitter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +39,7 @@
 		0D72ED301E988CA0005A5DB3 /* TweetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewController.swift; sourceTree = "<group>"; };
 		0D72ED521E98998D005A5DB3 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../Twitter/build/Debug-iphoneos/Twitter.framework"; sourceTree = "<group>"; };
 		0D72ED5E1E9A3C94005A5DB3 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		0DD535B11EA8750B004409CD /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = "../../../../Library/Developer/Xcode/DerivedData/L9-bvoshzamzzftrmdqduqzviqhfewf/Build/Products/Debug-iphonesimulator/Twitter.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DD535B21EA8750B004409CD /* Twitter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +96,7 @@
 		0D72ED511E98998D005A5DB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DD535B11EA8750B004409CD /* Twitter.framework */,
 				0D72ED521E98998D005A5DB3 /* Twitter.framework */,
 			);
 			name = Frameworks;

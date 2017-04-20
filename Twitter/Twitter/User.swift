@@ -26,7 +26,8 @@ public struct User: CustomStringConvertible
         guard
             let screenName = data?.string(forKeyPath: TwitterKey.screenName),
             let name = data?.string(forKeyPath: TwitterKey.name),
-            let id = data?.string(forKeyPath: TwitterKey.identifier)
+            //let id = data?.string(forKeyPath: TwitterKey.identifier)
+            let id = data?.int(forKeyPath: TwitterKey.identifier)?.description
             else {
                 return nil
         }
@@ -51,7 +52,7 @@ public struct User: CustomStringConvertible
     struct TwitterKey {
         static let name = "name"
         static let screenName = "screen_name"
-        static let identifier = "id_str"
+        static let identifier = "id"
         static let verified = "verified"
         static let profileImageURL = "profile_image_url"
     }

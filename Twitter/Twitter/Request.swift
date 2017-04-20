@@ -45,10 +45,12 @@ public class Request: NSObject
     
     // convenience initializer for creating a TwitterRequest that is a search for Tweets
     public convenience init(search: String, count: Int = 0) { // , resultType resultType: SearchResultType = .Mixed, region region: CLCircularRegion? = nil) {
-        var parameters = [TwitterKey.query : search]
-        if count > 0 {
-            parameters[TwitterKey.count] = "\(count)"
-        }
+        var parameters = ["appkey" : "179106666"]
+//        var parameters = [TwitterKey.query : search]
+//        if count > 0 {
+//            parameters[TwitterKey.count] = "\(count)"
+//        }
+
         //        switch resultType {
         //        case .Recent: parameters[TwitterKey.ResultType] = TwitterKey.ResultTypeRecent
         //        case .Popular: parameters[TwitterKey.ResultType] = TwitterKey.ResultTypePopular
@@ -242,10 +244,9 @@ public class Request: NSObject
     // constants
     
     private struct Constants {
-        //static let JSONExtension = ".json"
-        static let JSONExtension = ""
+        static let JSONExtension = ".json"
         //static let twitterURLPrefix = "https://api.twitter.com/1.1/"
-        static let twitterURLPrefix = "https://s.weibo.com/weibo/"
+        static let twitterURLPrefix = "https://api.weibo.com/2/statuses/public_timeline"
     }
     
     // keys in Twitter responses/queries
