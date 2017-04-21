@@ -11,9 +11,9 @@ import Twitter
 
 class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
-    private var tweets = [Array<Tweet>]() {
+    private var tweets = [Array<Twitter.Tweet>]() {
         didSet {
-            print(tweets)
+            //print(tweets)
         }
     }
     
@@ -28,6 +28,14 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             title = searchText
         }
     }
+    
+    func insertTweets(_ newTweets: [Twitter.Tweet]) {
+        self.tweets.insert(newTweets, at: 0)
+        self.tableView.insertSections([0], with: .fade)
+    }
+    
+    
+    //MARK: Updating the Table
     
     private func twitterRequest() -> Twitter.Request? {
         if let query = searchText, !query.isEmpty {
@@ -45,8 +53,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             request.fetchTweets { [weak self] newTweets in
                 DispatchQueue.main.async {
                     if request == self?.lastTwitterRequest {
-                        self?.tweets.insert(newTweets, at: 0)
-                        self?.tableView.insertSections([0], with: .fade)
+                        self?.insertTweets(newTweets)
                     }
                     self?.refreshControl?.endRefreshing()
                 }
@@ -107,12 +114,12 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
         
         // Configure the cell...
-        let tweet = tweets[indexPath.section][indexPath.row]
+        let tweet: Twitter.Tweet = tweets[indexPath.section][indexPath.row]
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
-//        cell.textLabel?.text = tweet.text
-//        cell.detailTextLabel?.text = tweet.user.name
+        //        cell.textLabel?.text = tweet.text
+        //        cell.detailTextLabel?.text = tweet.user.name
         
         return cell
     }
@@ -120,7 +127,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "\(tweets.count-section)"
     }
-     
+    
     
     
     /*

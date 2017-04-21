@@ -45,11 +45,11 @@ public class Request: NSObject
     
     // convenience initializer for creating a TwitterRequest that is a search for Tweets
     public convenience init(search: String, count: Int = 0) { // , resultType resultType: SearchResultType = .Mixed, region region: CLCircularRegion? = nil) {
-        var parameters = ["appkey" : "179106666"]
+        var parameters = ["appkey" : "179104687"]
 //        var parameters = [TwitterKey.query : search]
-//        if count > 0 {
-//            parameters[TwitterKey.count] = "\(count)"
-//        }
+        if count > 0 {
+            parameters[TwitterKey.count] = "\(count)"
+        }
 
         //        switch resultType {
         //        case .Recent: parameters[TwitterKey.ResultType] = TwitterKey.ResultTypeRecent
@@ -137,7 +137,9 @@ public class Request: NSObject
     
     func performTwitterRequest(_ method: SLRequestMethod, handler: @escaping (PropertyList?) -> Void) {
         let jsonExtension = (self.requestType.range(of: Constants.JSONExtension) == nil) ? Constants.JSONExtension : ""
-        let url = URL(string: "\(Constants.twitterURLPrefix)\(self.requestType)\(jsonExtension)")
+        let prefixID = Int(arc4random_uniform(3
+        ))
+        let url = URL(string: "\(Constants.twitterURLPrefixes[prefixID])\(self.requestType)\(jsonExtension)")
         //if let request = SLRequest(forServiceType: SLServiceTypeTwitter, requestMethod: method, url: url, parameters:
         if let request = SLRequest(forServiceType: SLServiceTypeSinaWeibo, requestMethod: method, url: url, parameters: parameters) {
             performTwitterSLRequest(request, handler: handler)
@@ -246,7 +248,11 @@ public class Request: NSObject
     private struct Constants {
         static let JSONExtension = ".json"
         //static let twitterURLPrefix = "https://api.twitter.com/1.1/"
-        static let twitterURLPrefix = "https://api.weibo.com/2/statuses/public_timeline"
+        
+        static let twitterURLPrefixes = [
+        "https://api.weibo.com/2/statuses/public_timeline",
+        "https://api.weibo.com/2/statuses/user_timeline",
+        "https://api.weibo.com/2/statuses/home_timeline"]
     }
     
     // keys in Twitter responses/queries
